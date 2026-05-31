@@ -1,0 +1,270 @@
+name: VitalityO1
+version: '${project.version}'
+main: me.vitalityo1.VitalityO1
+api-version: '1.21'
+description: A lightweight but powerful server management plugin
+authors: [VitalityO1]
+
+commands:
+  spawn:
+    description: Teleport to the server spawn.
+    usage: /spawn
+    permission: vitalityo1.spawn
+  setspawn:
+    description: Set the server spawn.
+    usage: /setspawn
+    permission: vitalityo1.admin
+  home:
+    description: Teleport to a home.
+    usage: /home [name]
+    permission: vitalityo1.home
+  sethome:
+    description: Set a home.
+    usage: /sethome [name]
+    permission: vitalityo1.home
+  delhome:
+    description: Delete a home.
+    usage: /delhome [name]
+    permission: vitalityo1.home
+  warp:
+    description: Teleport to a warp.
+    usage: /warp <name>
+    permission: vitalityo1.warp
+  setwarp:
+    description: Set a warp.
+    usage: /setwarp <name>
+    permission: vitalityo1.admin
+  delwarp:
+    description: Delete a warp.
+    usage: /delwarp <name>
+    permission: vitalityo1.admin
+  tpa:
+    description: Request to teleport to a player.
+    usage: /tpa <player>
+    permission: vitalityo1.tpa
+  tpaccept:
+    description: Accept a teleport request.
+    usage: /tpaccept
+    permission: vitalityo1.tpa
+  tpdeny:
+    description: Deny a teleport request.
+    usage: /tpdeny
+    permission: vitalityo1.tpa
+  back:
+    description: Teleport to your last location.
+    usage: /back
+    permission: vitalityo1.back
+  balance:
+    description: Check your balance.
+    usage: /balance [player]
+    aliases: [bal, money]
+    permission: vitalityo1.economy.balance
+  pay:
+    description: Pay another player.
+    usage: /pay <player> <amount>
+    permission: vitalityo1.economy.pay
+  eco:
+    description: Economy administration.
+    usage: /eco <give|take|set> <player> <amount>
+    aliases: [economy]
+    permission: vitalityo1.economy.admin
+  kick:
+    description: Kick a player from the server.
+    usage: /kick <player> [reason]
+    permission: vitalityo1.moderation.kick
+  ban:
+    description: Ban a player from the server.
+    usage: /ban <player> [reason]
+    permission: vitalityo1.moderation.ban
+  mute:
+    description: Mute a player.
+    usage: /mute <player> <time>
+    permission: vitalityo1.moderation.mute
+  unmute:
+    description: Unmute a player.
+    usage: /unmute <player>
+    permission: vitalityo1.moderation.mute
+  warn:
+    description: Warn a player.
+    usage: /warn <player> [reason]
+    permission: vitalityo1.moderation.warn
+  sc:
+    description: Staff chat.
+    usage: /sc <message>
+    aliases: [staffchat]
+    permission: vitalityo1.moderation.staffchat
+  fly:
+    description: Toggle flight.
+    usage: /fly [player]
+    permission: vitalityo1.fly
+  god:
+    description: Toggle god mode.
+    usage: /god [player]
+    permission: vitalityo1.god
+  heal:
+    description: Heal a player.
+    usage: /heal [player]
+    permission: vitalityo1.heal
+  feed:
+    description: Feed a player.
+    usage: /feed [player]
+    permission: vitalityo1.feed
+  vanish:
+    description: Toggle vanish.
+    usage: /vanish
+    permission: vitalityo1.vanish
+  repair:
+    description: Repair the item in hand.
+    usage: /repair
+    permission: vitalityo1.repair
+  msg:
+    description: Send a private message.
+    usage: /msg <player> <message>
+    aliases: [tell, pm, whisper]
+    permission: vitalityo1.msg
+  reply:
+    description: Reply to the last private message.
+    usage: /reply <message>
+    aliases: [r]
+    permission: vitalityo1.msg
+  seen:
+    description: Check when a player was last online.
+    usage: /seen <player>
+    permission: vitalityo1.seen
+  list:
+    description: List online players.
+    usage: /list
+    permission: vitalityo1.list
+
+permissions:
+  vitalityo1.*:
+    description: All VitalityO1 permissions.
+    default: op
+    children:
+      vitalityo1.spawn: true
+      vitalityo1.home: true
+      vitalityo1.warp: true
+      vitalityo1.tpa: true
+      vitalityo1.back: true
+      vitalityo1.fly: true
+      vitalityo1.god: true
+      vitalityo1.heal: true
+      vitalityo1.feed: true
+      vitalityo1.vanish: true
+      vitalityo1.repair: true
+      vitalityo1.msg: true
+      vitalityo1.seen: true
+      vitalityo1.list: true
+      vitalityo1.admin: true
+      vitalityo1.moderation.*: true
+      vitalityo1.economy.*: true
+
+  vitalityo1.admin:
+    description: Admin-level commands.
+    default: op
+
+  vitalityo1.spawn:
+    description: Use /spawn.
+    default: true
+
+  vitalityo1.home:
+    description: Use /home, /sethome, /delhome.
+    default: true
+
+  vitalityo1.warp:
+    description: Use /warp.
+    default: true
+
+  vitalityo1.tpa:
+    description: Use /tpa, /tpaccept, /tpdeny.
+    default: true
+
+  vitalityo1.back:
+    description: Use /back.
+    default: true
+
+  vitalityo1.fly:
+    description: Use /fly.
+    default: op
+
+  vitalityo1.god:
+    description: Use /god.
+    default: op
+
+  vitalityo1.heal:
+    description: Use /heal.
+    default: op
+
+  vitalityo1.feed:
+    description: Use /feed.
+    default: op
+
+  vitalityo1.vanish:
+    description: Use /vanish.
+    default: op
+
+  vitalityo1.repair:
+    description: Use /repair.
+    default: op
+
+  vitalityo1.msg:
+    description: Use /msg and /reply.
+    default: true
+
+  vitalityo1.seen:
+    description: Use /seen.
+    default: true
+
+  vitalityo1.list:
+    description: Use /list.
+    default: true
+
+  vitalityo1.moderation.*:
+    description: All moderation permissions.
+    default: op
+    children:
+      vitalityo1.moderation.kick: true
+      vitalityo1.moderation.ban: true
+      vitalityo1.moderation.mute: true
+      vitalityo1.moderation.warn: true
+      vitalityo1.moderation.staffchat: true
+
+  vitalityo1.moderation.kick:
+    description: Use /kick.
+    default: op
+
+  vitalityo1.moderation.ban:
+    description: Use /ban.
+    default: op
+
+  vitalityo1.moderation.mute:
+    description: Use /mute and /unmute.
+    default: op
+
+  vitalityo1.moderation.warn:
+    description: Use /warn.
+    default: op
+
+  vitalityo1.moderation.staffchat:
+    description: Use /sc.
+    default: op
+
+  vitalityo1.economy.*:
+    description: All economy permissions.
+    default: op
+    children:
+      vitalityo1.economy.balance: true
+      vitalityo1.economy.pay: true
+      vitalityo1.economy.admin: true
+
+  vitalityo1.economy.balance:
+    description: Use /balance.
+    default: true
+
+  vitalityo1.economy.pay:
+    description: Use /pay.
+    default: true
+
+  vitalityo1.economy.admin:
+    description: Use /eco.
+    default: op

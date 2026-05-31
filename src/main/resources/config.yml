@@ -1,0 +1,196 @@
+# ============================================================
+#   VitalityO1 Configuration
+#   GitHub: https://github.com/VitalityO1
+# ============================================================
+
+# Module toggles — set false to disable a feature entirely
+modules:
+  economy: true
+  homes: true
+  warps: true
+  teleportation: true
+  moderation: true
+  chat: true
+  spawn-protection: true
+  utilities: true
+
+# ============================================================
+#   MESSAGES  (use & for color codes)
+# ============================================================
+messages:
+  prefix: "&8[&6VitalityO1&8] &r"
+
+  # General
+  no-permission: "&cYou don't have permission to use this command."
+  player-not-found: "&cPlayer '&e{player}&c' not found or has never joined."
+  invalid-number: "&cPlease enter a valid number."
+  player-only: "&cThis command can only be used by players."
+  unknown-subcommand: "&cUnknown sub-command. Use &e{usage}&c."
+  module-disabled: "&cThis module is currently disabled."
+
+  # Spawn
+  spawn-set: "&aServer spawn has been set!"
+  spawn-teleport: "&aTeleporting to spawn..."
+  spawn-not-set: "&cSpawn has not been set yet. Use &e/setspawn&c."
+
+  # Homes
+  home-set: "&aHome '&e{home}&a' has been set!"
+  home-deleted: "&aHome '&e{home}&a' has been deleted."
+  home-not-found: "&cHome '&e{home}&c' was not found."
+  home-teleport: "&aTeleporting to home '&e{home}&a'..."
+  home-list: "&aYour homes: &f{homes}"
+  home-none: "&cYou have no homes set."
+  home-limit-reached: "&cYou have reached the maximum number of homes (&e{limit}&c)."
+
+  # Warps
+  warp-set: "&aWarp '&e{warp}&a' has been set!"
+  warp-deleted: "&aWarp '&e{warp}&a' has been deleted."
+  warp-not-found: "&cWarp '&e{warp}&c' was not found."
+  warp-teleport: "&aTeleporting to warp '&e{warp}&a'..."
+  warp-list: "&aAvailable warps: &f{warps}"
+  warp-none: "&cNo warps have been set."
+
+  # Teleport
+  teleport-warmup: "&aTeleporting in &e{seconds}&a second(s)... Don't move!"
+  teleport-cancelled: "&cTeleport cancelled! You moved."
+  teleport-cooldown: "&cYou must wait &e{seconds}s &cbefore teleporting again."
+  tpa-sent: "&aTeleport request sent to &e{player}&a."
+  tpa-received: "&e{player} &awants to teleport to you. Type &e/tpaccept &aor &e/tpdeny&a."
+  tpa-accepted: "&aYour teleport request was accepted."
+  tpa-denied: "&cYour teleport request was denied."
+  tpa-already-sent: "&cYou already have a pending teleport request to &e{player}&c."
+  tpa-no-request: "&cYou have no pending teleport requests."
+  tpa-expired: "&cTeleport request to &e{player} &chas expired."
+  tpa-self: "&cYou cannot send a teleport request to yourself."
+  back-teleport: "&aTeleporting to your last location..."
+  back-no-location: "&cNo previous location found."
+
+  # Economy
+  balance-self: "&aYour balance: &6{symbol}{balance}"
+  balance-other: "&e{player}'s &abalance: &6{symbol}{balance}"
+  pay-sent: "&aYou paid &e{player} &6{symbol}{amount}&a."
+  pay-received: "&e{player} &apaid you &6{symbol}{amount}&a."
+  pay-insufficient: "&cInsufficient funds. You need &6{symbol}{amount}&c."
+  pay-invalid-amount: "&cAmount must be a positive number."
+  pay-self: "&cYou cannot pay yourself."
+  eco-give: "&aGave &6{symbol}{amount} &ato &e{player}&a. New balance: &6{symbol}{balance}"
+  eco-take: "&aTook &6{symbol}{amount} &afrom &e{player}&a. New balance: &6{symbol}{balance}"
+  eco-set: "&aSet &e{player}'s &abalance to &6{symbol}{amount}&a."
+
+  # Moderation
+  kick-screen: "&cYou have been kicked.\n\n&eReason: &f{reason}"
+  kick-broadcast: "&e{player} &cwas kicked. &7Reason: &f{reason}"
+  ban-screen: "&cYou are banned from this server.\n\n&eReason: &f{reason}"
+  ban-broadcast: "&e{player} &cwas banned. &7Reason: &f{reason}"
+  mute-notify: "&cYou have been muted for &e{time}&c. &7Reason: &f{reason}"
+  mute-broadcast: "&e{player} &cwas muted for &e{time}&c."
+  unmute-notify: "&aYou have been unmuted."
+  unmute-broadcast: "&e{player} &ahas been unmuted."
+  mute-chat-blocked: "&cYou are muted for another &e{time}&c."
+  already-muted: "&e{player} &cis already muted."
+  not-muted: "&e{player} &cis not muted."
+  warn-notify: "&c&lWARNING &7[{count}/{max}]: &f{reason}"
+  warn-broadcast: "&e{player} &cwas warned by &e{staff}&c. &7Reason: &f{reason}"
+  staff-chat-format: "&8[&4STAFF&8] &c{player}&7: &f{message}"
+  ban-self: "&cYou cannot ban yourself."
+  kick-self: "&cYou cannot kick yourself."
+
+  # Utilities
+  fly-enabled: "&aFlight enabled."
+  fly-disabled: "&cFlight disabled."
+  fly-enabled-other: "&aFlight enabled for &e{player}&a."
+  fly-disabled-other: "&cFlight disabled for &e{player}&c."
+  god-enabled: "&aGod mode enabled."
+  god-disabled: "&cGod mode disabled."
+  god-enabled-other: "&aGod mode enabled for &e{player}&a."
+  god-disabled-other: "&cGod mode disabled for &e{player}&c."
+  heal-self: "&aYou have been healed!"
+  heal-other: "&aHealed &e{player}&a."
+  feed-self: "&aYou have been fed!"
+  feed-other: "&eFed &e{player}&a."
+  vanish-enabled: "&aYou are now invisible."
+  vanish-disabled: "&cYou are now visible again."
+  repair-success: "&aItem repaired successfully!"
+  repair-no-item: "&cYou must hold an item to repair."
+
+  # Social
+  msg-format: "&7[&e{sender} &7→ &e{receiver}&7] &f{message}"
+  reply-no-target: "&cYou have no one to reply to."
+  seen-online: "&e{player} &ais currently online."
+  seen-offline: "&e{player} &awas last seen &f{time} &aago."
+  seen-never: "&e{player} &chas never been seen on this server."
+
+  # Join / Quit
+  join-message: "&a+ &e{player} &ajoined the server."
+  quit-message: "&c- &e{player} &cleft the server."
+
+# ============================================================
+#   TELEPORT
+# ============================================================
+teleport:
+  # Warmup delay in seconds (0 = instant)
+  delay: 3
+  # Cooldown between teleports in seconds
+  cooldown: 30
+  # TPA request timeout in seconds
+  tpa-timeout: 60
+
+# ============================================================
+#   ECONOMY
+# ============================================================
+economy:
+  starting-balance: 1000.0
+  currency-symbol: "$"
+
+# ============================================================
+#   CHAT
+# ============================================================
+chat:
+  # Placeholders: {world}, {prefix}, {player}, {balance}, {message}
+  format: "&7[{world}] {prefix}&e{player}&7: &f{message}"
+  # Anti-spam cooldown in milliseconds
+  anti-spam-cooldown: 1500
+  swear-filter-enabled: true
+  swear-words:
+    - "badword1"
+    - "badword2"
+  swear-replacement: "***"
+
+# ============================================================
+#   HOMES
+# ============================================================
+homes:
+  default-limit: 3
+
+# ============================================================
+#   SPAWN PROTECTION
+# ============================================================
+spawn-protection:
+  enabled: true
+  # Radius around the spawn center to protect
+  radius: 16
+  # Allow ops to bypass protection
+  ops-bypass: true
+
+# ============================================================
+#   MODERATION
+# ============================================================
+moderation:
+  max-warnings: 3
+  # Action when player reaches max warnings: BAN or KICK
+  auto-action: BAN
+  broadcast-kicks: true
+  broadcast-bans: true
+  broadcast-mutes: true
+  broadcast-warns: true
+
+# ============================================================
+#   SPAWN LOCATION  (managed via /setspawn, do not edit manually)
+# ============================================================
+spawn:
+  world: ""
+  x: 0.0
+  y: 64.0
+  z: 0.0
+  yaw: 0.0
+  pitch: 0.0
